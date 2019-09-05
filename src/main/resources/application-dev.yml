@@ -7,16 +7,9 @@ spring:
     multipart:
       max-file-size: 150MB        #单个文件上传控制在2M
       max-request-size: 150MB    #总上传文件控制在10M
-  application:
-    name: config-client
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8A
-  cloud:
-    config:
-      label: master # 远程仓库的分支
-      profile: dev # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境,和git里的文件名对应
-      uri: http://localhost:8052/ # 指明配置服务中心的网址
 
 eureka:
   client:

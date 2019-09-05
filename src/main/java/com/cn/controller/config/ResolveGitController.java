@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ResolveGitController extends ParentController {
 
-    @Value("${address}") // git配置文件里的key
-    private String address;
+    @Value("${foo}") // git配置文件里的key
+    private String foo;
 
     public ResolveGitController() {
     }
 
     @RequestMapping(value = "/getGitInfo", method = RequestMethod.POST)
     public String getGitInfo() {
-        return address;
+        return foo;
     }
 }
