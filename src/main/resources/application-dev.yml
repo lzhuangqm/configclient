@@ -1,0 +1,40 @@
+spring:
+  zipkin:
+    base-url: http://47.105.188.188:9411/
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 150MB        #单个文件上传控制在2M
+      max-request-size: 150MB    #总上传文件控制在10M
+  application:
+    name: config-client
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    config:
+      label: master # 远程仓库的分支
+      profile: dev # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境,和git里的文件名对应
+      uri: http://localhost:8052/ # 指明配置服务中心的网址
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://47.105.188.188:8888/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 3
+    prefer-ip-address: true  #此配制必须加，加上后，如果服务断路，能使zuul或gateway路由更快恢复路由。
+
+server:
+  port: 8062 #8061 8062
+  undertow:
+    io-threads: 16
+    worker-threads: 256
+    buffer-size: 2048
+    direct-buffers: true
+  #address: 192.168.0.208
+  max-http-header-size: 10MB
