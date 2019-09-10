@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+
 public class ResolveGitController extends ParentController {
 
     @Value("${home}") // git配置文件里的key

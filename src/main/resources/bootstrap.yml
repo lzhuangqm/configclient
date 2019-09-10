@@ -3,6 +3,8 @@ spring:
     base-url: http://47.105.188.188:9411/
   main:
     allow-bean-definition-overriding: true
+  application:
+    name: config-client
   servlet:
     multipart:
       max-file-size: 150MB        #单个文件上传控制在2M
@@ -10,13 +12,20 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8A
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-service
+      name: config-client
+      label: master
+      profile: dev
+      uri: http://47.105.188.188:8052/ #配置服务中心 47.105.188.188
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://47.105.188.188:8888/eureka/
-    healthcheck:
-      enabled: true
+    #serviceUrl:
+      #defaultZone: http://47.105.188.188:8888/eureka/   # 本地测试时，serviceUrl写在application.yml中，正试部属时写在bootstrap.yml中。
   instance:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 3
