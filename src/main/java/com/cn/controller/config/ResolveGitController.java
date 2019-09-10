@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ResolveGitController extends ParentController {
 
-    @Value("${foo}") // git配置文件里的key
+    @Value("${home}") // git配置文件里的key
     private String foo;
 
     public ResolveGitController() {
