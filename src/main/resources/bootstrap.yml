@@ -15,11 +15,11 @@ spring:
   cloud:
     config:
       discovery:
-        enabled: true
-        service-id: config-service
-      name: config-client
-      label: master
-      profile: dev
+        enabled: true  #开启配置服务发现
+        service-id: config-service  #配置服务实例名称
+      name: config-client  # 读取Git配制文件的名称前缀
+      label: master  #配置文件所在分支
+      profile: dev # 读取Git配制文件的名称后缀
       uri: http://47.105.188.188:8052/ #配置服务中心 47.105.188.188
 
 eureka:
