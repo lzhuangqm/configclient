@@ -24,8 +24,8 @@ spring:
 
 eureka:
   client:
-    #serviceUrl:
-      #defaultZone: http://47.105.188.188:8888/eureka/   # 本地测试时，serviceUrl写在application.yml中，正试部属时写在bootstrap.yml中。
+    serviceUrl:
+      defaultZone: http://47.105.188.188:8888/eureka/   # 本地测试时，serviceUrl写在application.yml中，正试部属时写在bootstrap.yml中。
   instance:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 3

@@ -2,5 +2,5 @@ eureka:
   client:
     healthcheck:
       enabled: true # eureka.client.healthcheck.enabled=true必须设置在application.yml中，而不能设置在bootstrap.yml中，否则一些场景下会导致UNKNOWN的问题。
-    serviceUrl:
-      defaultZone: http://47.105.188.188:8888/eureka/ # 本地测试时，serviceUrl写在application.yml中，正试部属时写在bootstrap.yml中。
+    #serviceUrl:
+      #defaultZone: http://47.105.188.188:8888/eureka/ # 本地测试时，serviceUrl写在application.yml中，正试部属时写在bootstrap.yml中。
